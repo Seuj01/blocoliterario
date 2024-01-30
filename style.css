@@ -1,7 +1,14 @@
+/* Importa a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Aplica a fonte aos elementos */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 header {
@@ -14,7 +21,6 @@ nav ul {
     text-align: center;
     margin: 5px;
     padding: 0;
-
 }
 
 nav li {
@@ -34,39 +40,41 @@ nav a:hover {
     color: #ff9900; /* cor de destaque ao passar o mouse */
 }
 
-.container {
+.container, .container-header {
     width: 80%;
     margin: 0 auto; /* centraliza o container na página */
-    padding: 20px;
-}
-
-.container-header {
-    width: 80%;
-    margin: 0 auto; /* centraliza o container na página */
-    padding: 0; /* Reset padding for the header container */
+    padding: 10px;
 }
 
 .produto {
-    border: 1px solid #ddd;
+    border: 2px solid #f3f3f3;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
     display: inline-block;
-    width: 30%; /* Adjust the width as needed */
+    width: 24%; /* Divide os produtos em duas colunas em telas maiores */
     box-sizing: border-box;
+    border-radius: 9px;
 }
 
 .produto img {
     width: 100%; 
-    height: 190px;
+    height: auto; /* Altura automática para preservar a proporção */
     max-width: 100%;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    /* Adiciona estilos específicos para telas com largura máxima de 767px (dispositivos móveis) */
+    .produto {
+        width: 100%; /* Ajusta a largura para 100% em telas menores */
+    }
 }
 
 .preco {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: bold; /* Alterei para "bold" para manter a consistência */
     color: #333;
 }
 
@@ -77,6 +85,7 @@ button {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 10px;
 }
 
 button:hover {
